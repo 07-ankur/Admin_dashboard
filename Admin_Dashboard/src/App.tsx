@@ -1,8 +1,40 @@
+import Home from "./pages/home/Home";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+import Users from "./pages/users/Users";
+import Products from "./pages/products/Products";
+
 function App() {
 
+  const layout=()=>{
+    return(
+        <div className="main">
+          
+        </div>
+      )
+  }
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/users",
+      element: <Users/>,
+    },
+    {
+      path: "/products",
+      element: <Products/>,
+    },
+  ]);
+
   return (
-    <div>Hello World</div>
-  )
+    <RouterProvider router={router}/>
+  );
 }
 
-export default App
+export default App;
